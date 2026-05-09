@@ -1,24 +1,29 @@
 package com.example.firstproject.dto;
 import com.example.firstproject.entity.Member;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
 
+
+@AllArgsConstructor
+@ToString
 public class MemberForm {
-    private String title;
-    private String content;
+    private String email;
+    private String password;
 
-    public MemberForm(String title,String content) {
-        this.title = title;
-        this.content = content;
-    }
+//    public MemberForm(String email,String password) {
+//        this.email = email;
+//        this.password = password;
+//    }
 
-    @Override
-    public String toString() {
-        return "MemberForm{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "MemberForm{" +
+//                "title='" + email + '\'' +
+//                ", content='" + password + '\'' +
+//                '}';
+//    }
 
     public Member toEntity(){
-        return new Member(null, title, content);
+        return new Member(null, email, password);
     }
 }
